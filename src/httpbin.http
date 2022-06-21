@@ -1,0 +1,192 @@
+### 查询IP地址
+GET http://httpbin.org/ip
+
+### 接口测试基础地址
+@baseUrl =  http://114.55.119.223:8000
+@token = Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZGRyZXNzIjoiMHg3N2Y4Yzg5MDIwODljZTE3MTQwYmU5ZjQ0YWMzNTU1Mjc3MzE4MmExIiwibm9uY2UiOjY3MzA4MTk5LCJpYXQiOjE2NTE3NDg2ODd9.Lqs0iCODlyLhiEDdUs5D9A3F8-Z1vSN09nYV_iVdnzM
+
+### 获取艺术家数量
+GET {{baseUrl}}/api/market/getAritistsNum
+
+### 获取合约地址
+GET {{baseUrl}}/api/nft/getContractAddress
+Content-Type: application/application/json
+Authorization: {{token}}
+
+
+
+
+//------------------------------------------------NFT艺术品------------------------------------------------------------
+### 获取市场满足相应属性的NFT数量
+POST {{baseUrl}}/api/market/getNFTsNum
+Content-Type: application/json
+
+{ 
+  "status": {
+    "sold": false, 
+    "mint": false
+  } 
+}
+
+### 获取市场满足相应属性的NFTs
+POST {{baseUrl}}/api/market/getNFTs
+Content-Type: application/json
+
+{ 
+  "status": {
+    "creater": "0x0ec36cac07a7bf339c6993b85b9b9aad8c45d6ce"
+  } 
+}
+
+
+### 获取市场满足相应属性的NFTs
+POST {{baseUrl}}/api/market/getNFTs
+Content-Type: application/json
+
+{ 
+  "status": {
+     "sold": false
+  } 
+}
+
+
+### 获取用户钱包余额
+GET {{baseUrl}}/api/user/wallet/getBalance
+Authorization: {{token}}
+
+### 钱包充值
+POST {{baseUrl}}/api/user/wallet/recharge
+Authorization: {{token}}
+Content-Type: application/json
+
+{ 
+  "num": 1000 
+}
+
+
+
+//------------------------------------------------用户------------------------------------------------------------
+
+### 获取个人信息
+GET {{baseUrl}}/api/user/getUserInfo
+Authorization: {{token}}
+
+### 获取实名认证信息
+GET {{baseUrl}}/api/user/getVerifiedInfo
+Authorization: {{token}}
+
+### 实名认证
+POST {{baseUrl}}/api/user/verify
+Authorization: {{token}}
+Content-Type: application/json
+
+{ 
+  "real_name": "张三",
+  "phone": "1888888888",
+  "idcard": "555555555555555",
+}
+
+### 获取累计金额
+Get  {{baseUrl}}/api/user/getProfit
+Authorization: {{token}}
+Content-Type: application/json
+
+{ 
+  "from": "0x76ed1305aa25b0850b7d02fb33ae76fa15b622e4"
+}
+
+
+### 用户名登录
+POST  {{baseUrl}}//api/login/loginByLoginName
+Authorization: {{token}}
+Content-Type: application/json
+
+{ 
+  "login_name": "王麻子",
+  "password":"1"
+}
+
+
+### 下载钱包插件
+Get  {{baseUrl}}/api/user/dlMetaMask
+Authorization: {{token}}
+Content-Type: application/octet-stream
+
+### 生成邀请码 
+Get  {{baseUrl}}/api/user/createCode
+Authorization: {{token}}
+Content-Type: application/json
+
+### 生成海报 
+Post  {{baseUrl}}/api/user/createPoster
+Authorization: {{token}}
+Content-Type: application/octet-stream
+
+{ 
+  "url": "https://localhost:9527/#/register?icode=HrGaYi57",
+}
+
+### 获取用户数据
+Post  {{baseUrl}}/api/master/getUserInfo
+Authorization: {{token}}
+Content-Type: application/json
+
+{ 
+  "page": 1,
+  "num":20
+}
+
+### 更改用户数据
+Post  {{baseUrl}}/api/master/changeUserInfo
+Authorization: {{token}}
+Content-Type: application/json
+
+{ 
+  "userInfo":{
+    "address": "0x76ed1305aa25b0850b7d02fb33ae76fa15b622e4",
+    "level": 3
+  }
+}
+
+
+
+### 获取机构标签 
+Get  {{baseUrl}}/api/agency/getLabels
+Authorization: {{token}}
+Content-Type: application/json
+
+### 添加机构标签 
+Post  {{baseUrl}}/api/agency/createLabel
+Authorization: {{token}}
+Content-Type: application/json
+
+{ 
+  "name":"吉祥物"
+}
+
+### 消息查看 
+Post  {{baseUrl}}/api/user/interact/getMes
+Authorization: {{token}}
+Content-Type: application/json
+
+{
+  { "page": 1, "num": 10 }
+}
+
+### 查看抽成记录 
+Post  {{baseUrl}}/api/agency/drawTable
+Authorization: {{token}}
+Content-Type: application/json
+
+{
+  { "page": 1}
+}
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,453 @@
+@import './variables.scss';
+@import './mixin.scss';
+@import './transition.scss';
+@import './element-ui.scss';
+@import './sidebar.scss';
+@import './btn.scss';
+
+body {
+  height: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  font-family: Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB, Microsoft YaHei, Arial, sans-serif;
+}
+
+// 自定义区
+.flex{
+  display: flex;
+}
+.flex-row{
+  display: flex;
+  flex-direction: row;
+}
+.flex-column{
+  display: flex;
+  flex-direction: column;
+}
+.flex-hc{
+  justify-content: center;
+}
+.flex-sa{
+  justify-content: space-around;
+}
+.flex-sb{
+  justify-content: space-between;
+}
+.flex-hs{
+  justify-content: flex-start;
+}
+.flex-he{
+  justify-content: flex-end;
+}
+
+.flex-vs{
+  align-items: flex-start;
+}
+.flex-ve{
+  align-items: flex-end;
+}
+.flex-vc{
+  align-items: center;
+}
+.flex-hvc{
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-wrap{
+  flex-wrap: wrap;
+}
+.flex-nowrap{
+  flex-wrap: nowrap;
+}
+
+.dispaly-block{
+  display: block;
+}
+
+.dispaly-inline-block{
+  display:inline-block;
+}
+
+.btn-comon-bg{
+  background-color: #006E7B !important;
+}
+
+//宽度
+@for $i from 1 to 2560 {
+  .wdt-#{$i} {
+       width: 1px*$i;
+   }
+}
+
+@for $i from 1 to 200 {
+  .wdtp-#{$i} {
+       width: 1%*$i;
+   }
+}
+//高度
+@for $i from 1 to 300 {
+  .hgtp-#{$i} {
+       height: 1%*$i;
+   }
+}
+@for $i from 1 to 1080 {
+  .hgt-#{$i} {
+     height: 1px*$i;
+   }
+}
+//字体大小
+@for $i from 1 to 60 {
+  .font-#{$i} {
+       font-size: 1px*$i;
+   }
+}
+@for $i from 1 to 1000 {
+  .font-wt-#{$i} {
+       font-weight: $i;
+   }
+}
+//margin
+@for $i from 1 to 100 {
+  .mg-#{$i} {
+       margin: 1px*$i;
+   }
+}
+// margin-top
+@for $i from 1 to 100 {
+  .mgt-#{$i} {
+       margin-top: 1px*$i;
+   }
+}
+// margin-left
+@for $i from 1 to 100 {
+  .mgl-#{$i} {
+       margin-left: 1px*$i;
+   }
+}
+// margin-right
+@for $i from 1 to 100 {
+  .mgr-#{$i} {
+       margin-right: 1px*$i;
+   }
+}
+//margin-bottom
+@for $i from 1 to 100 {
+  .mgb-#{$i} {
+       margin-bottom: 1px*$i;
+   }
+}
+//margin-left margin-right  
+@for $i from 1 to 100 {
+  .mglr-#{$i} {
+    margin-right: 1px*$i;
+    margin-left: 1px*$i;
+   }
+}
+//padding
+@for $i from 1 to 100 {
+  .pd-#{$i} {
+    padding: 1px*$i;
+   }
+}
+
+//padding-top
+@for $i from 1 to 100 {
+  .pdt-#{$i} {
+    padding-top: 1px*$i;
+   }
+}
+//padding-bottom
+@for $i from 1 to 100 {
+  .pdb-#{$i} {
+    padding-bottom: 1px*$i;
+   }
+}
+//padding-left
+@for $i from 1 to 100 {
+  .pdl-#{$i} {
+    padding-left: 1px*$i;
+   }
+}
+//padding-right
+@for $i from 1 to 100 {
+  .pdr-#{$i} {
+    padding-right: 1px*$i;
+   }
+}
+//padding-left-right
+@for $i from 1 to 100 {
+  .pdlr-#{$i} {
+    padding-left: 1px*$i;
+    padding-right: 1px*$i;
+   }
+}
+//padding-top-bottom
+@for $i from 1 to 100 {
+  .pdtb-#{$i} {
+    padding-top: 1px*$i;
+    padding-bottom: 1px*$i;
+   }
+}
+
+//border-radius
+@for $i from 1 to 100 {
+  .bdr-r-#{$i} {
+    border-radius: 1px*$i;
+   }
+}
+
+@for $i from 1 to 100 {
+  .bdr-pr-#{$i} {
+    border-radius: 1%*$i;
+   }
+}
+
+.txt-ellipsis{
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+}
+
+.txt-ellipsis-more{
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  -webkit-line-clamp: 4;
+}
+
+.txt-wrap{
+  white-space: normal;
+  word-break: break-all;
+}
+.txt-algin-c{
+  text-align: center;
+}
+.txt-algin-l{
+  text-align: left;
+}
+.txt-algin-r{
+  text-align: right;
+}
+.txt-overflow-a{
+  overflow: auto;
+}
+.txt-overflow-h{
+  overflow: hidden;
+}
+.txt-overflow-y{
+  overflow-y: auto;
+}
+.txt-overflow-x{
+  overflow-x: auto;
+}
+.zoom-act{
+  &:hover{
+    cursor: pointer;
+    transform: scale(1.1);
+  }
+}
+
+.box-border{
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0px 0px 3px #ccc;
+  margin-bottom: 5px;
+}
+
+
+
+
+.test-bdr-1{
+  border: 1px solid red;
+}
+.test-bdr-2{
+  border: 1px solid blue;
+}
+.test-bdr-3{
+  border: 1px solid yellow;
+}
+.test-bdr-4{
+  border: 1px solid purple;
+}
+
+
+
+
+label {
+  font-weight: 700;
+}
+
+html {
+  height: 100%;
+  box-sizing: border-box;
+}
+
+#app {
+  height: 100%;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+.no-padding {
+  padding: 0px !important;
+}
+
+.padding-content {
+  padding: 4px 0;
+}
+
+a:focus,
+a:active {
+  outline: none;
+}
+
+a,
+a:focus,
+a:hover {
+  cursor: pointer;
+  color: inherit;
+  text-decoration: none;
+}
+
+div:focus {
+  outline: none;
+}
+
+.fr {
+  float: right;
+}
+
+.fl {
+  float: left;
+}
+
+.pr-5 {
+  padding-right: 5px;
+}
+
+.pl-5 {
+  padding-left: 5px;
+}
+
+.block {
+  display: block;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.inlineBlock {
+  display: block;
+}
+
+.clearfix {
+  &:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
+  }
+}
+
+aside {
+  background: #eef1f6;
+  padding: 8px 24px;
+  margin-bottom: 20px;
+  border-radius: 2px;
+  display: block;
+  line-height: 32px;
+  font-size: 16px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  color: #2c3e50;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  a {
+    color: #337ab7;
+    cursor: pointer;
+
+    &:hover {
+      color: rgb(32, 160, 255);
+    }
+  }
+}
+
+//main-container全局样式
+.app-container {
+  padding: 20px;
+}
+
+.components-container {
+  margin: 30px 50px;
+  position: relative;
+}
+
+.pagination-container {
+  margin-top: 30px;
+}
+
+.text-center {
+  text-align: center
+}
+
+.sub-navbar {
+  height: 50px;
+  line-height: 50px;
+  position: relative;
+  width: 100%;
+  text-align: right;
+  padding-right: 20px;
+  transition: 600ms ease position;
+  background: linear-gradient(90deg, rgba(32, 182, 249, 1) 0%, rgba(32, 182, 249, 1) 0%, rgba(33, 120, 241, 1) 100%, rgba(33, 120, 241, 1) 100%);
+
+  .subtitle {
+    font-size: 20px;
+    color: #fff;
+  }
+
+  &.draft {
+    background: #d0d0d0;
+  }
+
+  &.deleted {
+    background: #d0d0d0;
+  }
+}
+
+.link-type,
+.link-type:focus {
+  color: #337ab7;
+  cursor: pointer;
+
+  &:hover {
+    color: rgb(32, 160, 255);
+  }
+}
+
+.filter-container {
+  padding-bottom: 10px;
+
+  .filter-item {
+    display: inline-block;
+    vertical-align: middle;
+    margin-bottom: 10px;
+  }
+}
+
+//refine vue-multiselect plugin
+.multiselect {
+  line-height: 16px;
+}
+
+.multiselect--active {
+  z-index: 1000 !important;
+}
